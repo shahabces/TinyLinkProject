@@ -33,15 +33,16 @@ namespace TinyLink.Core.ApplicationServices
 
         }
 
-        //public string GetLink(string hash)
-        //public int GetStatistics(string hash)
-        //{
-        //    var exist = _tinyLinkRepository.Get(hash);
-        //    if (exist==null)
-        //    {
-        //        return -1;
-        //    }
-        //    return exist.Count;
-        //}
+        public string VisitLink(string hash)
+        {
+            var tinyLink = _tinyLinkRepository.Get(hash);
+            if (tinyLink==null)
+            {
+                return string.Empty;
+            }
+            tinyLink.Count++;
+            return tinyLink.Link;
+        }
+        
     }
 }
