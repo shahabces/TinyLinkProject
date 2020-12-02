@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using TinyLink.Core.Entities;
 
@@ -10,9 +11,9 @@ namespace TinyLink.Infrastructures.Data.SQLServer
     {
         public DbSet<TinyLinkEntity> TinyLinkEntities { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public TinyLinkDbContext([NotNull] DbContextOptions options) : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=.;initial catalog=TinyLinkDb;integrated security=true");
         }
+
     }
 }

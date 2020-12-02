@@ -16,6 +16,7 @@ namespace TinyLink.Infrastructures.Data.SQLServer
         {
             _tinyLinkDbContext = tinyLinkDbContext;
         }
+
         public string Add(TinyLinkEntity tinyLink)
         {
             _tinyLinkDbContext.TinyLinkEntities.Add(tinyLink);
@@ -23,25 +24,16 @@ namespace TinyLink.Infrastructures.Data.SQLServer
             return tinyLink.Hash;
         }
 
-        public bool Exist(string hash)
+        public void AddVisit(string hash)
         {
-            var exist = _tinyLinkDbContext.TinyLinkEntities.Where(c => c.Hash == hash).FirstOrDefault();
-            if (exist==null)
-            {
-                return false;
-            }
-            return true;
+            var link = _tinyLinkDbContext.TinyLinkEntities.Where(c => c.Hash == hash).FirstOrDefault();
+            link.Count++;
+            _tinyLinkDbContext.SaveChanges();
         }
 
-        public int Get(string hash)
+        public TinyLinkEntity Get(string hash)
         {
-            var tinylink = _tinyLinkDbContext.TinyLinkEntities.Where(c => c.Hash == hash).FirstOrDefault();
-            return tinylink.Count;
-        }
-
-        TinyLinkEntity ITinyLinkRepository.Get(string hash)
-        {
-            throw new NotImplementedException();
+            return _tinyLinkDbContext.TinyLinkEntities.Where(c => c.Hash == hash).FirstOrDefault();
         }
     }
 }

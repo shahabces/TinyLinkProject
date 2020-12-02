@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{20706B87-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyLink.Infrastructures.Data.SQLServer", "TinyLink.Infrastructures.Data.SQLServer\TinyLink.Infrastructures.Data.SQLServer.csproj", "{2C880D5C-B592-4F97-8534-8F27F033A2C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyLink.EndPoints.API", "TinyLink.EndPoints.API\TinyLink.EndPoints.API.csproj", "{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{2C880D5C-B592-4F97-8534-8F27F033A2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C880D5C-B592-4F97-8534-8F27F033A2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C880D5C-B592-4F97-8534-8F27F033A2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{8103B797-37BB-4557-8711-778F66204BB8} = {A8EF25B2-A014-4741-832E-8C7305BFBD3B}
 		{20706B87-BDCC-4FA6-9673-0767A06A0B69} = {E21FD38E-6C20-4A11-8CDA-4ADA739660A7}
 		{2C880D5C-B592-4F97-8534-8F27F033A2C2} = {20706B87-BDCC-4FA6-9673-0767A06A0B69}
+		{3731D3AC-A4F8-4A1C-8182-F0CFA2993B00} = {99D31F3E-5BD6-4299-9732-384AE602FB00}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CD0B7D7-9D03-4374-AA2F-3BF2FBCFCC7E}

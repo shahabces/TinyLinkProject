@@ -9,7 +9,7 @@ namespace TinyLink.Core.Contracts.Repositories
     public interface ITinyLinkRepository
     {
         string Add(TinyLinkEntity tinyLink);
-        bool Exist(string hash);
         TinyLinkEntity Get(string hash);
+        void AddVisit(string hash);
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
+using TinyLink.Core.Contracts;
 using TinyLink.Core.Contracts.Dtos;
 using TinyLink.Core.Contracts.Repositories;
 using TinyLink.Core.Entities;
 
 namespace TinyLink.Core.ApplicationServices
 {
-    public class TinyLinkApplicationService
+    public class TinyLinkApplicationService:ITinyLinkApplicationService
     {
         private readonly ITinyLinkRepository _tinyLinkRepository;
 
@@ -25,10 +26,10 @@ namespace TinyLink.Core.ApplicationServices
                     Hash = tinyLinkDto.Hash,
                     Count = 0
                 };
-                return _tinyLinkRepository.Add(tinyLinkEntity);
+                var hash = _tinyLinkRepository.Add(tinyLinkEntity);
+                return hash;
             }
 
-            tinyLink.Count++;
             return tinyLink.Hash;
 
         }
@@ -36,13 +37,13 @@ namespace TinyLink.Core.ApplicationServices
         public string VisitLink(string hash)
         {
             var tinyLink = _tinyLinkRepository.Get(hash);
-            if (tinyLink==null)
+            if (tinyLink == null)
             {
                 return string.Empty;
             }
-            tinyLink.Count++;
+            _tinyLinkRepository.AddVisit(hash);
             return tinyLink.Link;
         }
-        
+
     }
 }
