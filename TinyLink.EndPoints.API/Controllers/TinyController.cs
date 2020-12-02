@@ -31,7 +31,7 @@ namespace TinyLink.EndPoints.API.Controllers
             var link = _tinyLinkApplicationService.VisitLink(hash);
             if (link==string.Empty)
             {
-                throw new Exception("Not Found");
+                throw new Exception("Tiny Link Not Found!");
             }
 
             return Redirect(link);

@@ -31,9 +31,11 @@ namespace TinyLink.EndPoints.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddDbContext<TinyLinkDbContext>(c => c.UseSqlServer(Configuration.GetConnectionString("TinyLinkCnn")));
 
             services.AddScoped<ITinyLinkApplicationService, TinyLinkApplicationService>();
+
             services.AddScoped<ITinyLinkRepository, EfTinyLinkRepository>();
 
             services.AddSwaggerGen();
